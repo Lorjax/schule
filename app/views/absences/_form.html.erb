@@ -1,0 +1,32 @@
+<%= form_for(@absence) do |f| %>
+  <% if @absence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@absence.errors.count, "error") %> prohibited this absence from being saved:</h2>
+
+      <ul>
+      <% @absence.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :datum %><br>
+    <%= f.date_select :datum, order: [:day, :month, :year], use_month_names: [t('jan'), t('feb'), t('mar'), t('apr'), t('may'), t('jun'), t('jul'), t('aug'), t('sep'), t('oct'), t('nov'), t('dec')] %>
+  </div>
+  <div class="field">
+    <%= f.label :anzahl %><br>
+    <%= f.number_field :anzahl %>
+  </div>
+  <div class="field">
+    <%= f.label :pupil_id %><br>
+    <%= f.select :pupil_id, Pupil.all.map {|p| [p.vorname + " " + p.nachname, p.id] }, { include_blank: true },
+               class:'chosen-select' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

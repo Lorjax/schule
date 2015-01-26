@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vorname:</strong>
+  <%= @pupil.vorname %>
+</p>
+
+<p>
+  <strong>Nachname:</strong>
+  <%= @pupil.nachname %>
+</p>
+
+<p>
+  <strong>Klasse:</strong>
+  <%= @pupil.klasse %>
+</p>
+
+<p>
+  <strong>Hort:</strong>
+  <%= @pupil.hort %>
+</p>
+
+<p>
+	<strong>Fehlzeiten:</strong>
+	<table>
+		<thead>
+			<tr>
+				<th>Datum</th>
+				<th>Anzahl Schulstunden</th>
+			</tr>
+		</thead>
+		<tbody>
+	<% @absences.each do |absence| %>
+		<tr>
+			<td><%= absence.datum.strftime('%d.%m.%y.') %></td>
+			<td><%= absence.anzahl %></td>
+		</tr>
+	<% end %>
+		</tbody>
+</table>
+</p>
+<%= link_to 'Edit', edit_pupil_path(@pupil) %> |
+<%= link_to 'Back', pupils_path %>
