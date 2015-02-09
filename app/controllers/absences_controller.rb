@@ -12,6 +12,15 @@ class AbsencesController < ApplicationController
   def show
   end
 
+  # GET /search_by_date
+  def search_by_date
+    if params[:search_date]
+      @absences = Absence.where("datum = ?", params[:search_date])
+    else
+      @absences = Absence.all
+    end
+  end
+
   # GET /absences/new
   def new
     @absence = Absence.new

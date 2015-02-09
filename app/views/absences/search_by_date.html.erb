@@ -1,0 +1,18 @@
+<h1><%= t('absences') %> suchen</h1>
+
+<p>Bitte Datum wählen:</p>
+<%= form_tag("", method: 'get', remote: true) do %>
+<%= label_tag(:search_date, "Suche nach Datum...") %>
+<%= text_field_tag 'search_date' %>
+<%= submit_tag("Suchen") %>
+<% end %>
+<p>Ergebnisse für den ...</p>
+<table>
+	<thead>
+		<tr>
+			<th>Vorname</th>
+			<th>Nachname</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>

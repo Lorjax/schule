@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :absences
+  resources :absences do
+    collection do
+      get 'search_by_date' => 'absences#search_by_date'
+    end
+  end
+  
 
   resources :pupils
 

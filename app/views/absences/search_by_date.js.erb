@@ -1,0 +1,5 @@
+<% if @absences %>
+	<% @absences.each do |absence| %>
+	$("tbody").append("<tr><td><%= absence.pupil.vorname %></td><td><%= absence.pupil.nachname %></td></tr>");
+	<% end %>
+	<% end %>

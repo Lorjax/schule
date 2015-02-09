@@ -16,3 +16,4 @@
 //= require_tree .
 //= require chosen-jquery
 //= require scaffold
+//= require jquery-ui/datepicker
