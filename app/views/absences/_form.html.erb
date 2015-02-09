@@ -1,33 +1,27 @@
 <%= form_for(@absence) do |f| %>
-  <% if @absence.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@absence.errors.count, "error") %> prohibited this absence from being saved:</h2>
-
-      <ul>
-      <% @absence.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="row">
+  <div class="large-8 columns">
+    <div class="row">
+      <div class="small-3 columns"><%= f.label :datum %></div>
+      <div class="small-9 columns"><%= f.text_field :datum %></div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :datum %><br>
-    <%= f.text_field :datum %>
-
-  </div>
-  <div class="field">
-    <%= f.label :anzahl %><br>
-    <%= f.number_field :anzahl %>
-  </div>
-  <div class="field">
-    <%= f.label :pupil_id %><br>
-    <%= f.select :pupil_id, Pupil.all.map {|p| [p.vorname + " " + p.nachname, p.id] }, { include_blank: true },
-               class:'chosen-select' %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Fehlzeit eintragen" %>
-  </div>
+    <div class="row">
+      <div class="small-3 columns"><%= f.label :anzahl %></div>
+      <div class="small-9 columns"><%= f.number_field :anzahl %></div>
+    </div>
+    <div class="row">
+      <div class="small-3 columns"><%= f.label :pupil_id %></div>
+      <div class="small-9 columns"><%= f.select :pupil_id, Pupil.all.map {|p| [p.vorname + " " + p.nachname, p.id] }, { include_blank: true }, class:'chosen-select' %></div>
+    </div>
+    <div class="row">
+      <div class="small-3 columns"></div>
+      <div class="small-9 columns"></div>
+    </div>
+    <div class="row">
+      <div class="small-3 columns"></div>
+      <div class="small-9 columns"><%= f.submit "Fehlzeit eintragen", class: "button small large-9", style:"margin-top:20px" %></div>
+    </div>
 <% end %>
-
+</div>
+</div>
 

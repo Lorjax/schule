@@ -3,7 +3,9 @@ $ ->
   $('.chosen-select').chosen
     allow_single_deselect: true
     no_results_text: 'keine Ergebnisse'
-    width: '200px'
+    width: '100%'
+    placeholder_text_single: 'Schüler auswählen'
+    inherit_select_classes: true
 
 $ ->
   $('#search_date').datepicker({
