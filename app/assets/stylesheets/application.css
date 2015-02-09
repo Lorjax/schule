@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
+ *= require dataTables/jquery.dataTables.foundation
  *= require chosen
  *= require jquery-ui/datepicker
  */

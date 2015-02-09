@@ -16,6 +16,8 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.foundation
 //= require turbolinks
 //= require chosen-jquery
 //= require jquery-ui/datepicker
@@ -24,3 +26,4 @@
 
 
 $(function(){ $(document).foundation(); });
+

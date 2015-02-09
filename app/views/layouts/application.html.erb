@@ -15,9 +15,10 @@
   <body>
     <%= render "layouts/nav" %>
     <div class="row">
-      <div class="large-2 columns"></div>
-      <div class="large-8 columns"><%= yield %></div>
-      <div class="large-2 columns"></div>
+      <%= render "layouts/flash" %>
+    </div>
+    <div class="row">
+      <div class="large-12 columns"><%= yield %></div>
     </div>
 
     

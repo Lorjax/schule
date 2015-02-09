@@ -28,6 +28,8 @@ gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 # Foundation
 gem 'foundation-rails', '~> 5.5.1.0'
+# DateTables
+gem 'jquery-datatables-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

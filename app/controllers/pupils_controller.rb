@@ -13,6 +13,11 @@ class PupilsController < ApplicationController
     @absences = Absence.where("pupil_id = ?",[params[:id]])
   end
 
+  def import
+    Pupil.import(params[:file])
+    redirect_to pupils_path, notice: "Schüler importiert."
+  end
+
   # GET /pupils/new
   def new
     @pupil = Pupil.new
