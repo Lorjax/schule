@@ -4,6 +4,7 @@ class AbsencesController < ApplicationController
   # GET /absences
   # GET /absences.json
   def index
+    @absences_today = Absence.where("datum = ?", Date.today)
     @absences = Absence.all
   end
 
@@ -16,8 +17,6 @@ class AbsencesController < ApplicationController
   def search_by_date
     if params[:search_date]
       @absences = Absence.where("datum = ?", params[:search_date])
-    else
-      @absences = Absence.all
     end
   end
 

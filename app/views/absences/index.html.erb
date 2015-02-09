@@ -1,6 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Absences</h1>
+<h1><%= t('absences') %></h1>
+<h2>Fehlend heute, den <%= Date.today.strftime("%d.%m.%y") %></h2>
+<table>
+  <thead>
+    <tr>
+      <th>Vorname</th>
+      <th>Nachname</th>
+      <th>Klasse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @absences_today.size > 0 %>
+    <% @absences_today.each do |abs_today| %>
+    <tr>
+      <td><%= abs_today.pupil.vorname %></td>
+      <td><%= abs_today.pupil.nachname %></td>
+      <td><%= abs_today.pupil.klasse %></td>
+    </tr>
+    <% end %>
+    <% else %>
+    <tr>
+      <td colspan="3">keine fehlende Schüler</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <table>
   <thead>
@@ -28,6 +53,5 @@
 
 <br>
 
-<%= link_to 'New Absence', new_absence_path %>
-<div id="datepicker"></div>
-<a href="" onClick="alert(date)">hiere</a>
+<%= link_to 'Fehlzeit eintragen', new_absence_path %>
+<%= link_to 'Fehlzeit suchen', search_by_date_absences_path %>

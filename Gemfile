@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # jquery UI
 gem 'jquery-ui-rails'
+# Fix for jQuery UI and Turbolinks problem -> https://github.com/kossnocorp/jquery.turbolinks
+gem 'jquery-turbolinks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

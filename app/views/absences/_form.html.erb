@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :datum %><br>
-    <%= f.date_select :datum, order: [:day, :month, :year], use_month_names: [t('jan'), t('feb'), t('mar'), t('apr'), t('may'), t('jun'), t('jul'), t('aug'), t('sep'), t('oct'), t('nov'), t('dec')] %>
+    <%= f.text_field :datum %>
+
   </div>
   <div class="field">
     <%= f.label :anzahl %><br>
@@ -25,7 +26,7 @@
                class:'chosen-select' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Fehlzeit eintragen" %>
   </div>
 <% end %>
 

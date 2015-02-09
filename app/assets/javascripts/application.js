@@ -10,10 +10,13 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//
+// jquery turbolinks Problem -> https://github.com/kossnocorp/jquery.turbolinks
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require chosen-jquery
-//= require scaffold
 //= require jquery-ui/datepicker
+//
+//= require turbolinks

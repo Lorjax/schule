@@ -1,5 +1,11 @@
-<% if @absences %>
-	<% @absences.each do |absence| %>
-	$("tbody").append("<tr><td><%= absence.pupil.vorname %></td><td><%= absence.pupil.nachname %></td></tr>");
+$("tbody").fadeOut("fast", function() {
+		<% if @absences.size > 0 %>
+		<% @absences.each do |absence| %>
+		$("tbody").html("<tr><td><%= absence.pupil.vorname %></td><td><%= absence.pupil.nachname %></td></tr>");	
+		<% end %>
+	<% else %>
+		$("tbody").empty();
 	<% end %>
-	<% end %>
+});
+
+$("tbody").fadeIn("fast");
